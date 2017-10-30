@@ -1,0 +1,15 @@
+	 ORG 800H  
+	 RST 5  
+	 MOV B,D  
+	 MOV C,E  
+	 RST 5  
+	 LXI H,0  
+PETLA 	 DAD D  
+	 DCX B  
+	 MOV A,B  
+	 CPI 0  
+	 JNZ PETLA  
+	 MOV A,C  
+	 CPI 0  
+	 JNZ PETLA  
+	 HLT  

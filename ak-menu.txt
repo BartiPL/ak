@@ -1,0 +1,19 @@
+	 ORG 800H  
+WYBOR  
+	 LXI H,MENU  
+	 RST 3  
+	 RST 2  
+	 CPI '1'  
+	 CZ PROCEDURA_1  
+	 CPI '2'  
+	 CZ PROCEDURA_2  
+	 JMP WYBOR  
+PROCEDURA_1 	 LXI H,TEXT_1  
+	 RST 3  
+	 RET  
+PROCEDURA_2 	 LXI H,TEXT_2  
+	 RST 3  
+	 HLT  
+MENU 	 DB 10,13,'wpisz 1 lub 2 > ','@' 
+TEXT_1 	 DB 10,13,'wybrano opcje 1','@' 
+TEXT_2 	 DB 10,13,'koniec!!!','@' 
